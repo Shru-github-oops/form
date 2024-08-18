@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive HTML Form</title>
+</head>
+<body>
+    <form action="form.html"  method="post" enctype="multipart/form-data" autocomplete="on" novalidate target="_blank">
+        <fieldset>
+            <legend>Basic Information</legend>
+            
+            <!-- Text input -->
+            <label for="text">Text:</label>
+            <input type="text" id="text" name="text" placeholder="Enter text"  minlength="3" maxlength="20" pattern="[A-Za-z]+" autofocus required>
+            <br><br>
+            
+            <!-- Password input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            
+            <!-- Email input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            
+            <!-- URL input -->
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" placeholder="https://example.com" required>
+            <br><br>
+            
+            <!-- Telephone input -->
+            <label for="tel">Telephone:</label>
+            <input type="tel" id="tel" name="tel" placeholder="123-45-678" required>
+            <br><br>
+            
+            <!-- Number input -->
+            <label for="number">Number:</label>
+            <input type="number" id="number" name="number" min="1" max="10" step="1" value="5" required>
+            <br><br>
+            
+            <!-- Range input -->
+            <label for="range">Range:</label>
+            <input type="range" id="range" name="range" min="0" max="100" step="10" required>
+            <br><br>
+            
+            <!-- Date input -->
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+            
+            <!-- Time input -->
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            <br><br>
+            
+            <!-- Color input -->
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color" value="#000000" required>
+            <br><br>
+            
+            <!-- File input -->
+            <label for="file">File:</label>
+            <input type="file" id="file" name="file" multiple required>
+            <br><br>
+            
+            <!-- Checkbox -->
+            <label for="checkbox">Checkbox:</label>
+            <input type="checkbox" id="checkbox" name="checkbox" checked required>
+            <br><br>
+            
+            <!-- Radio buttons -->
+            <label>Radio:</label>
+            <input type="radio" id="radio1" name="radio" value="1" checked>
+            <label for="radio1">Option 1</label>
+            <input type="radio" id="radio2" name="radio" value="2">
+            <label for="radio2">Option 2</label>
+            <br><br>
+
+              <label for="password">Password:</label>
+        <input type="password" id="password" name="password" size="50" required>
+        <br><br>
+
+        <label for="resume">Upload your resume (PDF only):</label>
+        <input type="file" id="resume" name="resume" accept=".pdf" required>
+        <br><br>
+            
+            <!-- Select box -->
+            <label for="select">Select:</label>
+            <select id="select" name="select" multiple>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <br><br>
+
+             <!-- Using input type="image" for a graphical submit button -->
+        <input type="image" src="C:\Users\SHRUTI\Desktop\game1.jfif" alt="Submit" width="48" height="48" required>
+            <br><br>
+            <!-- Textarea -->
+            <label for="textarea">Textarea:</label>
+            <textarea id="textarea" name="textarea" rows="4" cols="50" maxlength="200" placeholder="Enter text here..."></textarea>
+            <br><br>
+            
+
+             <!-- Using datalist for autocomplete -->
+        <label for="browser">Choose your browser:</label>
+        <input list="browsers" id="browser" name="browser">
+        <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Safari">
+            <option value="Edge">
+            <option value="Opera">
+        </datalist>
+
+        <br><br>
+
+        <!-- Using optgroup to group options in a select element -->
+        <label for="fruit">Choose a fruit:</label>
+        <select id="fruit" name="fruit">
+            <optgroup label="Citrus">
+                <option value="orange">Orange</option>
+                <option value="lemon">Lemon</option>
+                <option value="lime">Lime</option>
+            </optgroup>
+            <optgroup label="Berries">
+                <option value="strawberry">Strawberry</option>
+                <option value="blueberry">Blueberry</option>
+                <option value="raspberry">Raspberry</option>
+            </optgroup>
+        </select>
+        <br><br>
+
+        <!-- Using output to display result -->
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" name="num1">
+        
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" name="num2">
+        
+        <button type="button" onclick="calculateSum()">Calculate Sum</button>
+        
+        <output id="result"></output>
+
+        <br><br>
+
+            <!-- Hidden input -->
+            <input type="hidden" id="hidden" name="hidden" value="secret">
+            
+            <!-- Button input -->
+            <button type="submit">Submit</button>
+            <input type="reset" value="Reset">
+            <button type="button" onclick="alert('Button clicked!')">Click Me</button>
+        </fieldset>
+    </form>
+    <script>
+        function calculateSum() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const sum = num1 + num2;
+            document.getElementById('result').value = sum;
+        }
+    </script>
+</body>
+</html>
